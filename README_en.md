@@ -1,80 +1,91 @@
-# 🏴‍☠️ ADU OpenPilot | Advanced Car Hacking & CAN Protocol Toolkit
-
 <div align="center">
-  <img src="logo (2).jpg" alt="ADU OpenPilot Logo" width="200"/>
-  
-  **An aggressive, red-team-oriented toolkit for automotive penetration testing, CAN bus manipulation, and vehicle reverse engineering.**
+  <img src="assets/logo (2).jpg" alt="ADU OpenPilot Logo" width="300"/>
+
+  # 🛡️ ADU OpenPilot 
+  **Revolutionary Cyber-Platform for Automotive Reverse Engineering & CAN Exploitation**
+
+  <p align="center">
+    <a href="README.md">Türkmençe</a> •
+    <a href="README_en.md">English</a>
+  </p>
+
+  [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
+  [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey.svg?style=for-the-badge&logo=windows)](https://github.com/EzizYsmailov/Openpilot)
+  [![Security](https://img.shields.io/badge/Security-Red%20Team%20%7C%20Pentesting-red.svg?style=for-the-badge&logo=hackthebox)](https://github.com/EzizYsmailov/Openpilot)
+  [![License](https://img.shields.io/badge/License-Research%20Only-yellow.svg?style=for-the-badge)](https://github.com/EzizYsmailov/Openpilot)
 </div>
 
-## 📌 Overview
-**ADU OpenPilot** is a specialized framework developed for **Automotive Red Teaming, Black-box Testing, and CAN Protocol Exploitation**. Designed to interface directly with modern vehicle networks, it allows security researchers to sniff, decode, manipulate, and forcefully inject control packets (Steering, Throttle, Braking) into the OBD-II port or internal vehicle CAN buses.
+---
 
-With built-in parser targets for major manufacturers—such as **Toyota, Honda, Hyundai, Subaru, and Nissan**—and an extensive collection of decoded `.dbc` files, this tool is intended to demonstrate vulnerabilities in vehicular networks and study proprietary automotive communication protocols.
+## 🌍 Overview
+
+**ADU OpenPilot** is not merely a collection of code comprised of programming languages and algorithms; it is a revolutionary, immensely powerful cyber-platform that completely subjugates a physical object—a multi-ton vehicle—to the sheer will of an engineer using nothing but their fingertips and a keyboard, achieving a level of control that can be considered "total domination."
+
+The core mission of ADU OpenPilot is to empower offensive and defensive (Red Team, Blue Team) engineers to perform penetration testing, discover vulnerabilities and flaws before malicious actors do, and guarantee the fortification of defense systems and software enhancements.
+
+**Continuous and Universal Hardware Agnostic Architecture**
+This project operates not only with high-end, industry-standard specialized cybersecurity tools like the `IXXAT USB-to-CAN` interface, but it also seamlessly integrates with extremely small and affordable `ESP32 & MCP2515` microcontroller bridges designed for long-term scientific surveillance (implants) within vehicles. Consequently, this system remains universally accessible across any scenario—from the most extensive laboratory operations to covert operational research on testing grounds.
 
 ---
 
-## ⚡ Red Team Features (Attack Vectors)
-- 💉 **Active Payload Injection:** Bypass standard vehicle control units to inject custom torque, steering angle, and acceleration demands directly into the driving systems.
-- 📡 **CAN Traffic Sniffing & Parsing:** Decode live proprietary manufacturer packets on the fly using a robust internal `.dbc` decoding engine.
-- 🔧 **Hardware Agnostic & Malicious Bridges:** 
-  - Compatible with professional grade **IXXAT USB-to-CAN** adapters.
-  - Supports clandestine, low-cost **ESP32 & MCP2515** CAN bridges (embedded `.ino` payloads included in the repo) for covert, remote deployment.
-- 🛡️ **Safety Layer Analysis:** Built-in `safety_layer.py` module to study, emulate, and potentially identify bypasses for modern ADAS (Advanced Driver Assistance Systems) limiters.
-- 🚦 **Real-time Vehicle Domination:** Fully interactive graphical C2 (Command & Control) dashboard to monitor 4-wheel telemetry and assert live physical constraints over the drivetrain.
+## ⚡ Core Features & Attack Vectors
+
+* 🎯 **Active Payload Injection:** Bypass the vehicle's primary Electronic Control Units (ECUs) to directly inject and command steering angles, unique torque speeds, and throttle/brake states into the network.
+* 📡 **CAN Traffic Sniffing & Monitoring:** Intercept and decipher proprietary manufacturer packets in real-time "on the fly" using a robust internal `.dbc` engine.
+* 🛡️ **Safety Layer Analysis (Bypass):** An internal module built to study, emulate, and discover bypass techniques for modern ADAS (Advanced Driver Assistance Systems) limitations.
+* 🎮 **Real-Time Vehicle Domination:** Monitor 4-wheel metrics online and maintain direct control over physical limitations straight from the C2 (Command & Control) interface.
 
 ---
 
-## 📁 Toolkit Architecture
+## 🏗️ Hacker Toolkit Architecture
+
 ```text
 ADU_OpenPilot/
- ├── main.py              ← Core execution engine / Splash Screen
- ├── gui.py               ← C2 Dashboard / Control Interface
- ├── can_interface.py     ← Hardware bridging (IXXAT / Serial CAN)
- ├── can_parser.py        ← Generic CAN sniffer & decoder
- ├── toyota_parser.py     ← Toyota-specific protocol dissection
- ├── toyota_commands.py   ← Exploitation payloads (Steering, Throttle)
- ├── safety_layer.py      ← Parameter boundary emulation / restrictions
- ├── esp32_can_bridge.ino ← Covert microcontroller exploit firmware
- └── dbc_files/           ← 30+ Decoded automotive databases (Crown Jewels)
+ ├── main.py              ➔ Core Engine / C2 Launcher
+ ├── gui.py               ➔ C2 (Command & Control) Dashboard
+ ├── can_interface.py     ➔ Hardware Bridge Connector (IXXAT / Serial)
+ ├── can_parser.py        ➔ Universal CAN Traffic Sniffer & Decoder
+ ├── toyota_parser.py     ➔ Code Decryptor for Toyota Vehicles
+ ├── toyota_commands.py   ➔ Exploitation Payloads (Steering, Throttle)
+ ├── safety_layer.py      ➔ Parameter Constraints & Emulator Limits
+ ├── firmware/            ➔ Internal Micro-Controller Covert Firmware (ESP32 Implant)
+ └── dbc_files/           ➔ 30+ Decrypted Auto-Protocol Databases
 ```
 
 ---
 
-## 🛠️ Weaponization & Setup
+## 🚀 Getting Started
 
 ### Prerequisites
-Deploy the required dependencies on your penetration testing machine (Python 3.10+ recommended):
+To install the tool on your operating system (Python 3.10+ recommended):
 ```bash
 pip install -r requirements.txt
-# Core necessities: python-can, cantools, pillow
 ```
 
 ### Execution
-1. Connect your CAN interface (IXXAT or custom ESP32 implant) to the target vehicle's CAN-H and CAN-L lines.
-2. Launch the C2 Dashboard:
+1. Connect your CAN interface (IXXAT or covert ESP32 implant) to the vehicle's CAN-H and CAN-L lines.
+2. Launch the C2 (Command & Control) panel:
 ```bash
-# Initialize active connection with hardware
+# Active connection with hardware (Real Hacking Mode)
 python main.py
 
-# Offline analysis and UI practice (Simulation Mode)
+# External analysis and familiarization (Simulation and Prep - Demo Mode)
 python main.py --demo
 ```
 
-### Emulated Controls (Live Engagement)
-When actively bridged to a vulnerable CAN bus and target systems are primed:
-- **Steering Takeover:** `◀◀` and `▶▶` arrows or arbitrary slider values (`-1500` to `+1500` torque/angle).
-- **Throttle / Override:** `▲` and `▼` for direct acceleration parameter manipulation (`-3.5` to `+2.0` accel mapping).
-
 ---
 
-## ⚠️ Legal Disclaimer (Must Read)
-> **FOR EDUCATIONAL AND AUTHORIZED PENTESTING ONLY.**
-> This software is strictly provided for security researchers, red teams, and automotive cybersecurity professionals working on **authorized targets**.
+## ⚠️ Legal and Safety Warning (Must Read!)
+
+> [!CAUTION]
+> **FOR SCIENTIFIC RESEARCH AND AUTHORIZED PENETRATION TESTING ONLY.**
+> This software is provided exclusively for cybersecurity professionals, red-team members, and researchers operating on **authorized vehicles** and legal technical platforms.
 > 
-> **WARNING:** Injecting packets into a moving vehicle's CAN bus is **extremely dangerous** and can lead to loss of life or catastrophic hardware failure. **DO NOT** use this software on public roads or vehicles you do not explicitly own or have written, legally binding permission to test. 
+> **WARNING:** Directly interfacing with a moving vehicle's CAN network and injecting packets is **extremely dangerous**, and can pose a severe threat to your life, the vehicle, and bystanders, as well as potentially brick the hardware. **NEVER USE** this tool on public roads, streets, or on real vehicles that you do not own or have explicit authorization to test.
 > 
-> The creator, contributors, and repository owners assume **zero liability** for any damage, injury, legal repercussions, or property loss resulting from the use or misuse of this code. Use responsibly in closed, controlled environments.
+> The creator of this project, contributors, and the repository owner bear **absolutely no legal responsibility** for any crime, damage, loss of life, accidents during testing, unethical usage, or property damage. Use this tool entirely at your own discretion, at your own risk, and strictly within closed, controlled environments.
 
 ---
-
-**© 2026 ADU OpenPilot Development. All Rights Reserved.**
+<div align="center">
+  <b>© 2026 ADU OpenPilot Development. All Rights Reserved.</b>
+</div>

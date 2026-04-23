@@ -1,56 +1,69 @@
-# 🏴‍☠️ ADU OpenPilot | Ösen Awtoulag Hakerligi we CAN Protokol Guraly
-
 <div align="center">
-  <img src="logo (2).jpg" alt="ADU OpenPilot Logo" width="200"/>
-  
-  **Awtoulag kiberhowpsuzlygy, aralaşmak synaglary (pentesting), CAN torüna hüjüm we ulaglaryň yzyna inženerligi (Reverse Engineering) üçin niýetlenen, agressiw we Red Team gönükdirilen gural toplumy.**
+  <img src="assets/logo (2).jpg" alt="ADU OpenPilot Logo" width="300"/>
+
+  # 🛡️ ADU OpenPilot 
+  **Revolutionary Cyber-Platform for Automotive Reverse Engineering & CAN Exploitation**
+
+  <p align="center">
+    <a href="README.md">Türkmençe</a> •
+    <a href="README_en.md">English</a>
+  </p>
+
+  [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
+  [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey.svg?style=for-the-badge&logo=windows)](https://github.com/EzizYsmailov/Openpilot)
+  [![Security](https://img.shields.io/badge/Security-Red%20Team%20%7C%20Pentesting-red.svg?style=for-the-badge&logo=hackthebox)](https://github.com/EzizYsmailov/Openpilot)
+  [![License](https://img.shields.io/badge/License-Research%20Only-yellow.svg?style=for-the-badge)](https://github.com/EzizYsmailov/Openpilot)
 </div>
 
-## 📌 Gysgaça Syn (Overview)
-**ADU OpenPilot** - bu **Awtoulag Red Teaming, Black-box (Gara guty) Barlaglary we CAN Protokolyny Ele Almak (Exploitation)** üçin ösdürilip ýetişdirilen ýöriteleşdirilen platformadyr. Kiberhowpsuzlyk barlagçylaryna we hakerlere häzirki zaman awtoulag torlaryny diňlemäge, okap bilmäge we OBD-II porty ýa-da içki özen CAN hatarlary arkaly dolandyryş paketlerini (Rul, Gaz, Tormoz) zor bilen siňdirmäge (Payload Injection) rugsat berýär.
+---
 
-**Toyota, Honda, Hyundai, Subaru, we Nissan** ýaly uly öndürijiler üçin gurlan "parser" (okaýjy logikalar) we weýran edilen `.dbc` faýllaryň uly arhiwi bilen, bu gural awtoulag torlaryndaky gowşaklyklary (vulnerabilities) ýüze çykarmak we ýapyk protokollary öwrenmek niýeti bilen taýýarlandy. Diňe arassa awtoulag kiber-toparlary üçin!
+## 🌍 Platforma Barada (Overview)
+
+**ADU OpenPilot** – diňe bir programmirleme dillerinden we algoritmlerden ybarat bolan kod toplumy däl-de, ol fiziki obýekte eýe bolan, birnäçe tonnalyk agyrlykdaky awtoulagy diňe bir inženeriň barmaklarynyň ujy we klawiaturasy arkaly doly öz erkine boýun egdirýän we “doly ele alyp biljek derejede” güýçli, rewolusion bir kiber-platformadyr. 
+
+ADU OpenPilot düýp maksady hüjüm we goranyş (Red Team, Blue Team) inžinerlerine jenaýatçylardan öň pentest edip şol kemçilikleri we gowşaklyklary tapmagy, we berk gorag ulgamy, programmalary kämilleşdirmekligi kepillendirýär.
+
+**Üznüksiz we Ähliumumy Apparat Utgaşyklygy (Hardware Agnostic Architecture)**
+Bu proýekt diňe bir ýokary senagat-standartly, ýöriteleşen kiberhowpsuzlyk gurallary bolan `IXXAT USB-to-CAN` ýaly abzal bilen işlemän, eýsem awtoulaglaryň içinde uzak möhletli ylmy gözegçilik (implant) arkaly ulanmak üçin niýetlenen çakdanaşa kiçi we arzan `ESP32 & MCP2515` mikrokontroller köprüleri bilen hem işleşip bilýär. Şeýlelikde, bu ulgam iň uly laboratoriýa amallaryndan başlap, türgenleşik meýdanlarynda gizlin operasion barlaglara çenli islendik halda elýeterlidir.
 
 ---
 
-## ⚡ Red Team Aýratynlyklary (Hüjüm Wektorlary)
-- 💉 **Işjeň Tarp (Payload) Inýeksiýasy:** Awtoulagyň esasy dolandyryş bloklaryny (ECU) bökäp geçmek arkaly ulgama göni rulyň burçuny, özboluşly torque tizligini we gaz/tormoz welaýatlaryny siňdirmek.
-- 📡 **CAN Trafik Diňlemek & Gözegçilik:** Ulag öndürijiniň hakyky wagtda ugradýan hususy paketlerini berk içki `.dbc` motory arkaly "on the fly" (dessine) açyp okamak.
-- 🔧 **Apparat Garaşsyzlygy we Gizlin Köprüler:** 
-  - Yokary hilli ylmy barlaglar üçin **IXXAT USB-to-CAN** adapterleri bilen doly sinhron.
-  - Elýeterli, arzan we uzakda ornaşdyryp (implant) bolýan **ESP32 & MCP2515** CAN köprülerini (repository-da `.ino` payload'lary goşulan) covert operasiýalary üçin goldaýar.
-- 🛡️ **Gorag Gatlagy Analizi (Safety Layer Bypass):** Häzirki zaman ADAS (Ulagy sürüjäsiz dolandyrma ulgamlary) çäklendirmelerini öwrenmek, emulýasiýa etmek we olary aýlanyp geçmegiň (bypass) ýollaryny açmak üçin gurulan içki `safety_layer.py` moduly.
-- 🚦 **Real-wagtda Ulagy Tabyn Etmek (Domination):** 4 tigiriň ölçeglerini onlaýn görmek we fiziki çäklendirmeleri C2 (Command & Control) edaralyk interfeýsden göni el astynda saklamak.
+## ⚡ Esasy Aýratynlyklar we Hujüm Wektorlary
+
+* 🎯 **Işjeň Tarp (Payload) Inýeksiýasy:** Awtoulagyň esasy dolandyryş bloklaryny (ECU) böküp geçmek arkaly ulgama göni rulyň burçuny, özboluşly torque tizligini we gaz/tormoz welaýatlaryny siňdirmek.
+* 📡 **CAN Trafik Diňlemek & Gözegçilik:** Ulag öndürijiniň hakyky wagtda ugradýan hususy paketlerini berk içki `.dbc` motory arkaly "on the fly" (dessine) açyp okamak.
+* 🛡️ **Gorag Gatlagy Analizi (Safety Layer Bypass):** Häzirki zaman ADAS (Ulagy sürüjisiz dolandyrma ulgamlary) çäklendirmelerini öwrenmek, emulýasiýa etmek we olary aýlanyp geçmegiň (bypass) ýollaryny açmak üçin gurulan içki modul.
+* 🎮 **Real-wagtda Ulagy Tabyn Etmek (Domination):** 4 tigiriň ölçeglerini onlaýn görmek we fiziki çäklendirmeleri C2 (Command & Control) edaralyk interfeýsden göni el astynda saklamak.
 
 ---
 
-## 📁 Hakerlik Toplumynyň Gurluşy (Architecture)
+## 🏗️ Hakerlik Toplumynyň Gurluşy (Architecture)
+
 ```text
 ADU_OpenPilot/
- ├── main.py              ← Guralyň esasy ýadrosy / Ýükleýji ekeran
- ├── gui.py               ← C2 (Command & Control) Dolandyryş Paneli
- ├── can_interface.py     ← Apparat köprülerini birikdiriji (IXXAT / Serial)
- ├── can_parser.py        ← Umumy CAN trafik diňleýji (Sniffer & Decoder)
- ├── toyota_parser.py     ← Toyota awtoulaglarynyň kodlarynyň deşifratory
- ├── toyota_commands.py   ← Exploitation Payload'lary (Rul gysymlary, Gaz)
- ├── safety_layer.py      ← Parametr çäklendirmeleri we emulýator limitleri
- ├── esp32_can_bridge.ino ← Içerki mikro-kontroller gizlin firmwary (implant)
- └── dbc_files/           ← 30+ Deşifirlenen awto-protokol bazalary (Esasy Baýlyk)
+ ├── main.py              ➔ Guralyň esasy ýadrosy / C2 başlangyjy
+ ├── gui.py               ➔ C2 (Command & Control) Dolandyryş Paneli
+ ├── can_interface.py     ➔ Apparat köprülerini birikdiriji (IXXAT / Serial)
+ ├── can_parser.py        ➔ Umumy CAN trafik diňleýji (Sniffer & Decoder)
+ ├── toyota_parser.py     ➔ Toyota awtoulaglarynyň kodlarynyň deşifratory
+ ├── toyota_commands.py   ➔ Exploitation Payload'lary (Rul gysymlary, Gaz)
+ ├── safety_layer.py      ➔ Parametr çäklendirmeleri we emulýator limitleri
+ ├── firmware/            ➔ Içerki mikro-kontroller gizlin firmwary (ESP32 implant)
+ └── dbc_files/           ➔ 30+ Deşifirlenen awto-protokol bazalary
 ```
 
 ---
 
-## 🛠️ Ýaraglandyryş we Gurnama
+## 🚀 Ulanmaga Başlamak
 
-### Talap Edilmeler (Prerequisites)
-Guraly operasiýa laptop-yňyza gurnamak üçin (Python 3.10+ maslahat berilýär):
+### Talap Edilmeler
+Guraly operasiýa ulgamyňyza gurnamak üçin (Python 3.10+ maslahat berilýär):
 ```bash
 pip install -r requirements.txt
-# Esasy talaplar: python-can, cantools, pillow
 ```
 
 ### Işe Başlamak (Execution)
-1. Öz CAN interfeýsiňizi (IXXAT ýa-da gizlin ESP32) awtoulagyň CAN-H we CAN-L çyzyklaryna birikdiriň.
+1. Öz CAN interfeýsiňizi (IXXAT ýa-da gizlin ESP32 implant) awtoulagyň CAN-H we CAN-L çyzyklaryna birikdiriň.
 2. C2 (Command & Control) panelini işlediň:
 ```bash
 # Apparat bilen işjeň baglanyşyk (Real Hacking Mode)
@@ -60,14 +73,11 @@ python main.py
 python main.py --demo
 ```
 
-### Janly Dolandyryş (Emulated Controls)
-Awtoulagyň gowşak CAN toryna birikdirilen wagty we sistemalar tabyn edilende:
-- **Ruly Ele Almak (Steering Takeover):** `◀◀` we `▶▶` oklary ýa-da slider arkaly göni dereje (`-1500` -den `+1500` torque) sargydy.
-- **Gaz/Ýokaryk Gezmek (Throttle Override):** `▲` we `▼` arkaly (-3.5 ~ +2.0 awtokonsentrat) diýdimsoňlyk güýç geçirişi amala aşyrmak.
-
 ---
 
 ## ⚠️ Kanun we Howpsuzlyk Duýduryşy (Hökman Okaň!)
+
+> [!CAUTION]
 > **DIŇE YLMY-BARLAG WE RUGSAT EDILEN SYNAGLAR ÜÇIN (PENTESTING).**
 > Bu programma, **dine rugsat berlen ulaglarda** we kanuny tehniki platformalarda işleýän kiberhowpsuzlyk işgärleri, red-team topary we barlagçylar üçin berilýär.
 > 
@@ -76,5 +86,6 @@ Awtoulagyň gowşak CAN toryna birikdirilen wagty we sistemalar tabyn edilende:
 > Bu taslamany dörediji ýa-da onuň proýektine goşant goşujylar, repository-nýn eýesi islendik jenaýat, zyýan, adam ölüm-ýitgisi, synag mahaly heläkçilik, ahlaksyz ulanmak we emlägiň ýitmegi babatda kanuny taýdan **hiç hili jogapkärçilik çekmeýär**. Guraly öz paýhasyňyz we jogapkärçiligiňiz astynda, ýapyk we dolandyrylýan meýdançalarda ulanyň.
 
 ---
-
-**© 2026 ADU OpenPilot Development. Ähli hukuklar goralan.**
+<div align="center">
+  <b>© 2026 ADU OpenPilot Development. Ähli hukuklar goralan.</b>
+</div>
